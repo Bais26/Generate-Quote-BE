@@ -12,6 +12,12 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res)=> {
+    res.json({
+        message: "Api is Awesome"
+    })
+})
+
 app.get('/api/quote', (req, res) => {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   res.json(randomQuote);
